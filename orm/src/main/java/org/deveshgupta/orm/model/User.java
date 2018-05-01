@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity(name = "USER")
 @Table
@@ -24,7 +26,9 @@ public class User {
 	private String name;
 	@Column(name = "EMAIL",nullable=false, unique=true)
 	private String email;
+	
 	@Column(name = "DATE_OF_BIRTH")
+	@Temporal(TemporalType.DATE)
 	private Date dateOfBirth;
 	
 	@OneToOne(cascade=CascadeType.ALL)
