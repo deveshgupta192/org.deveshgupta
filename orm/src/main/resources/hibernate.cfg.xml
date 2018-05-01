@@ -10,12 +10,15 @@
 		<property name="hibernate.connection.username">root</property>
 		<property name="hibernate.connection.password">devesh</property>
 		<property name="hibernate.connection.pool_size">10</property>
-		<property name="hibernate.hbm2ddl.auto">create</property>
-		<property name="show_sql">true</property>
 		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 		<property name="hibernate.current_session_context_class">thread</property>
 		<property name="hibernate.id.new_generator_mappings">false</property>
+		<property name="hibernate.hbm2ddl.auto">create-drop</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		
 		<mapping class="org.deveshgupta.orm.model.User" />
 		<mapping class="org.deveshgupta.orm.model.Message" />
+		<mapping class="org.deveshgupta.orm.model.Address" />
 	</session-factory>
 </hibernate-configuration>
