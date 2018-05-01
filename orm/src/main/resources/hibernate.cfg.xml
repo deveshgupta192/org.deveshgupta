@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-5.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/orm</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">devesh</property>
+		<property name="hibernate.connection.pool_size">10</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="show_sql">true</property>
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.id.new_generator_mappings">false</property>
+		<mapping class="org.deveshgupta.orm.model.User" />
+		<mapping class="org.deveshgupta.orm.model.Message" />
+	</session-factory>
+</hibernate-configuration>
