@@ -3,6 +3,7 @@ package org.deveshgupta.orm;
 import java.util.Date;
 
 import org.deveshgupta.orm.model.Address;
+import org.deveshgupta.orm.model.Gender;
 import org.deveshgupta.orm.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -85,6 +86,7 @@ public class OneToOneExample {
 		user.setDateOfBirth(new Date());
 		user.setEmail(email);
 		user.setName(name);
+		user.setGender(Gender.MALE);
 		return user;
 	}
 }

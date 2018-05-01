@@ -5,6 +5,8 @@ import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,7 +36,11 @@ public class User {
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="ADDRESS_ID")
 	private Address address;
-
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name = "GENDER")
+	private Gender gender;
+	
 	public Long getId() {
 		return id;
 	}
@@ -75,12 +81,18 @@ public class User {
 		this.address = address;
 	}
 
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", dateOfBirth=" + dateOfBirth + ", address="
-				+ address + "]";
+				+ address + ", gender=" + gender + "]";
 	}
-
-	
 	
 }
