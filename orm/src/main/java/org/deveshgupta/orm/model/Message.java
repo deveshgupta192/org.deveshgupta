@@ -10,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+
 @Entity(name = "MESSAGE")
 @Table
 public class Message {
@@ -23,6 +25,7 @@ public class Message {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "NEXT_MESSAGE_ID")
+	@Cascade(org.hibernate.annotations.CascadeType.DELETE)
 	private Message nextMessage;
 
 	public Message() {
@@ -51,5 +54,12 @@ public class Message {
 	public void setNextMessage(Message nextMessage) {
 		this.nextMessage = nextMessage;
 	}
+
+	@Override
+	public String toString() {
+		return "Message [id=" + id + ", text=" + text + ", nextMessage=" + (nextMessage!=null?nextMessage.getId():null) + "]";
+	}
+	
+	
 
 }
